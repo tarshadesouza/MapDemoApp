@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MapDemoApp' do
+  use_frameworks!
+  pod 'GoogleMaps'
+	pod 'Alamofire', '~> 5.2'
+
+  # Pods for MapDemoApp
+  target 'MapDemoAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

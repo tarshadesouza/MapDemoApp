@@ -3,17 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6084C0634A1A8686C49F7985 /* Pods_MapDemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A688D5074B4C0D1E386C04 /* Pods_MapDemoAppTests.framework */; };
+		C177F1C424B6200800FBCACC /* MainMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1BE24B6200800FBCACC /* MainMapPresenter.swift */; };
+		C177F1C524B6200800FBCACC /* MainMapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1BF24B6200800FBCACC /* MainMapRouter.swift */; };
+		C177F1C624B6200800FBCACC /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1C024B6200800FBCACC /* MainMapViewController.swift */; };
+		C177F1C724B6200800FBCACC /* MainMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1C124B6200800FBCACC /* MainMapInteractor.swift */; };
+		C177F1C824B6200800FBCACC /* Test Template in Resources */ = {isa = PBXBuildFile; fileRef = C177F1C224B6200800FBCACC /* Test Template */; };
+		C177F1CD24B6202700FBCACC /* MainMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1CC24B6202700FBCACC /* MainMapModel.swift */; };
+		C177F1CF24B6203900FBCACC /* MainMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C177F1CE24B6203900FBCACC /* MainMapViewController.xib */; };
+		C177F1D824B6249500FBCACC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1D724B6249500FBCACC /* Vehicle.swift */; };
+		C177F1DA24B6263C00FBCACC /* Meepable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1D924B6263C00FBCACC /* Meepable.swift */; };
+		C177F1DD24B62A8D00FBCACC /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1DC24B62A8D00FBCACC /* BaseRepository.swift */; };
+		C177F1DF24B62AAA00FBCACC /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1DE24B62AAA00FBCACC /* RequestManager.swift */; };
+		C177F1E124B62AC900FBCACC /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1E024B62AC900FBCACC /* Endpoints.swift */; };
+		C177F1E324B62BC200FBCACC /* MainMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1E224B62BC200FBCACC /* MainMapRepository.swift */; };
+		C177F1E524B62CA000FBCACC /* Meep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1E424B62CA000FBCACC /* Meep.swift */; };
+		C177F1E724B62D6000FBCACC /* Bike.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1E624B62D6000FBCACC /* Bike.swift */; };
+		C177F1E924B62E4800FBCACC /* BustStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177F1E824B62E4800FBCACC /* BustStop.swift */; };
 		C1C9875D24B5C66A00216513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9875C24B5C66A00216513 /* AppDelegate.swift */; };
 		C1C9875F24B5C66A00216513 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9875E24B5C66A00216513 /* SceneDelegate.swift */; };
-		C1C9876124B5C66A00216513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9876024B5C66A00216513 /* ViewController.swift */; };
 		C1C9876424B5C66A00216513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876224B5C66A00216513 /* Main.storyboard */; };
 		C1C9876624B5C66D00216513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876524B5C66D00216513 /* Assets.xcassets */; };
 		C1C9876924B5C66D00216513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876724B5C66D00216513 /* LaunchScreen.storyboard */; };
 		C1C9877424B5C66D00216513 /* MapDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */; };
+		D340F79F3CA77C09AB3E426B /* Pods_MapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CAFAA929AF3A067AE38CE2 /* Pods_MapDemoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +44,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38BB7010A963F36F2AD56409 /* Pods-MapDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		71CAFAA929AF3A067AE38CE2 /* Pods_MapDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2D8DF6C45D3F7E8046EFA04 /* Pods-MapDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MapDemoAppTests/Pods-MapDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B02D9C56859B29EB2AC1019B /* Pods-MapDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-MapDemoAppTests/Pods-MapDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BEC501CF70CFB08819B76726 /* Pods-MapDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		C177F1BE24B6200800FBCACC /* MainMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapPresenter.swift; sourceTree = "<group>"; };
+		C177F1BF24B6200800FBCACC /* MainMapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapRouter.swift; sourceTree = "<group>"; };
+		C177F1C024B6200800FBCACC /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
+		C177F1C124B6200800FBCACC /* MainMapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapInteractor.swift; sourceTree = "<group>"; };
+		C177F1C224B6200800FBCACC /* Test Template */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Template"; sourceTree = "<group>"; };
+		C177F1CC24B6202700FBCACC /* MainMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapModel.swift; sourceTree = "<group>"; };
+		C177F1CE24B6203900FBCACC /* MainMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMapViewController.xib; sourceTree = "<group>"; };
+		C177F1D724B6249500FBCACC /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		C177F1D924B6263C00FBCACC /* Meepable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meepable.swift; sourceTree = "<group>"; };
+		C177F1DC24B62A8D00FBCACC /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		C177F1DE24B62AAA00FBCACC /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		C177F1E024B62AC900FBCACC /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		C177F1E224B62BC200FBCACC /* MainMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapRepository.swift; sourceTree = "<group>"; };
+		C177F1E424B62CA000FBCACC /* Meep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meep.swift; sourceTree = "<group>"; };
+		C177F1E624B62D6000FBCACC /* Bike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike.swift; sourceTree = "<group>"; };
+		C177F1E824B62E4800FBCACC /* BustStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BustStop.swift; sourceTree = "<group>"; };
 		C1C9875924B5C66A00216513 /* MapDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C9875C24B5C66A00216513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C9875E24B5C66A00216513 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C1C9876024B5C66A00216513 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1C9876324B5C66A00216513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1C9876524B5C66D00216513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1C9876824B5C66D00216513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +75,7 @@
 		C1C9876F24B5C66D00216513 /* MapDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoAppTests.swift; sourceTree = "<group>"; };
 		C1C9877524B5C66D00216513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A688D5074B4C0D1E386C04 /* Pods_MapDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapDemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D340F79F3CA77C09AB3E426B /* Pods_MapDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +91,117 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6084C0634A1A8686C49F7985 /* Pods_MapDemoAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1944C9EFBC9BEBE7EC827E77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38BB7010A963F36F2AD56409 /* Pods-MapDemoApp.debug.xcconfig */,
+				BEC501CF70CFB08819B76726 /* Pods-MapDemoApp.release.xcconfig */,
+				A2D8DF6C45D3F7E8046EFA04 /* Pods-MapDemoAppTests.debug.xcconfig */,
+				B02D9C56859B29EB2AC1019B /* Pods-MapDemoAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C177F1CA24B6200C00FBCACC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1CB24B6201300FBCACC /* MainMap */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C177F1CB24B6201300FBCACC /* MainMap */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1D424B6206200FBCACC /* ViewModel */,
+				C177F1D324B6205B00FBCACC /* Router */,
+				C177F1D224B6205000FBCACC /* Interactor */,
+				C177F1D124B6204900FBCACC /* Presenter */,
+				C177F1D024B6203E00FBCACC /* View */,
+				C177F1C224B6200800FBCACC /* Test Template */,
+			);
+			path = MainMap;
+			sourceTree = "<group>";
+		};
+		C177F1D024B6203E00FBCACC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1C024B6200800FBCACC /* MainMapViewController.swift */,
+				C177F1CE24B6203900FBCACC /* MainMapViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C177F1D124B6204900FBCACC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1BE24B6200800FBCACC /* MainMapPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C177F1D224B6205000FBCACC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1C124B6200800FBCACC /* MainMapInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C177F1D324B6205B00FBCACC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1BF24B6200800FBCACC /* MainMapRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C177F1D424B6206200FBCACC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1CC24B6202700FBCACC /* MainMapModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C177F1D524B623FD00FBCACC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1D724B6249500FBCACC /* Vehicle.swift */,
+				C177F1D924B6263C00FBCACC /* Meepable.swift */,
+				C177F1E424B62CA000FBCACC /* Meep.swift */,
+				C177F1E624B62D6000FBCACC /* Bike.swift */,
+				C177F1E824B62E4800FBCACC /* BustStop.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C177F1DB24B62A7400FBCACC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C177F1DC24B62A8D00FBCACC /* BaseRepository.swift */,
+				C177F1DE24B62AAA00FBCACC /* RequestManager.swift */,
+				C177F1E024B62AC900FBCACC /* Endpoints.swift */,
+				C177F1E224B62BC200FBCACC /* MainMapRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		C1C9875024B5C66A00216513 = {
 			isa = PBXGroup;
 			children = (
 				C1C9875B24B5C66A00216513 /* MapDemoApp */,
 				C1C9877224B5C66D00216513 /* MapDemoAppTests */,
 				C1C9875A24B5C66A00216513 /* Products */,
+				1944C9EFBC9BEBE7EC827E77 /* Pods */,
+				F460CD31828EC921D0E7935E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +217,15 @@
 		C1C9875B24B5C66A00216513 /* MapDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				C177F1DB24B62A7400FBCACC /* Repositories */,
 				C1C9875C24B5C66A00216513 /* AppDelegate.swift */,
 				C1C9875E24B5C66A00216513 /* SceneDelegate.swift */,
-				C1C9876024B5C66A00216513 /* ViewController.swift */,
 				C1C9876224B5C66A00216513 /* Main.storyboard */,
 				C1C9876524B5C66D00216513 /* Assets.xcassets */,
 				C1C9876724B5C66D00216513 /* LaunchScreen.storyboard */,
 				C1C9876A24B5C66D00216513 /* Info.plist */,
+				C177F1D524B623FD00FBCACC /* Models */,
+				C177F1CA24B6200C00FBCACC /* Scenes */,
 			);
 			path = MapDemoApp;
 			sourceTree = "<group>";
@@ -99,6 +239,15 @@
 			path = MapDemoAppTests;
 			sourceTree = "<group>";
 		};
+		F460CD31828EC921D0E7935E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71CAFAA929AF3A067AE38CE2 /* Pods_MapDemoApp.framework */,
+				F3A688D5074B4C0D1E386C04 /* Pods_MapDemoAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1C9877824B5C66D00216513 /* Build configuration list for PBXNativeTarget "MapDemoApp" */;
 			buildPhases = (
+				AB48564EE2E64E0A11EA62AD /* [CP] Check Pods Manifest.lock */,
 				C1C9875524B5C66A00216513 /* Sources */,
 				C1C9875624B5C66A00216513 /* Frameworks */,
 				C1C9875724B5C66A00216513 /* Resources */,
+				A94EF36DD92F4362806CE223 /* [CP] Copy Pods Resources */,
+				182A6EB0F98BB0858B2A541C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1C9877B24B5C66D00216513 /* Build configuration list for PBXNativeTarget "MapDemoAppTests" */;
 			buildPhases = (
+				EE0B0ADA48480D99729968F4 /* [CP] Check Pods Manifest.lock */,
 				C1C9876B24B5C66D00216513 /* Sources */,
 				C1C9876C24B5C66D00216513 /* Frameworks */,
 				C1C9876D24B5C66D00216513 /* Resources */,
@@ -181,7 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C9876924B5C66D00216513 /* LaunchScreen.storyboard in Resources */,
+				C177F1C824B6200800FBCACC /* Test Template in Resources */,
 				C1C9876624B5C66D00216513 /* Assets.xcassets in Resources */,
+				C177F1CF24B6203900FBCACC /* MainMapViewController.xib in Resources */,
 				C1C9876424B5C66A00216513 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,14 +350,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		182A6EB0F98BB0858B2A541C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A94EF36DD92F4362806CE223 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapDemoApp/Pods-MapDemoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB48564EE2E64E0A11EA62AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapDemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE0B0ADA48480D99729968F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapDemoAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C1C9875524B5C66A00216513 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1C9876124B5C66A00216513 /* ViewController.swift in Sources */,
+				C177F1DA24B6263C00FBCACC /* Meepable.swift in Sources */,
+				C177F1D824B6249500FBCACC /* Vehicle.swift in Sources */,
+				C177F1E724B62D6000FBCACC /* Bike.swift in Sources */,
+				C177F1C624B6200800FBCACC /* MainMapViewController.swift in Sources */,
+				C177F1CD24B6202700FBCACC /* MainMapModel.swift in Sources */,
+				C177F1C524B6200800FBCACC /* MainMapRouter.swift in Sources */,
+				C177F1C424B6200800FBCACC /* MainMapPresenter.swift in Sources */,
 				C1C9875D24B5C66A00216513 /* AppDelegate.swift in Sources */,
+				C177F1DF24B62AAA00FBCACC /* RequestManager.swift in Sources */,
+				C177F1E324B62BC200FBCACC /* MainMapRepository.swift in Sources */,
 				C1C9875F24B5C66A00216513 /* SceneDelegate.swift in Sources */,
+				C177F1DD24B62A8D00FBCACC /* BaseRepository.swift in Sources */,
+				C177F1E124B62AC900FBCACC /* Endpoints.swift in Sources */,
+				C177F1E924B62E4800FBCACC /* BustStop.swift in Sources */,
+				C177F1E524B62CA000FBCACC /* Meep.swift in Sources */,
+				C177F1C724B6200800FBCACC /* MainMapInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +609,7 @@
 		};
 		C1C9877924B5C66D00216513 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38BB7010A963F36F2AD56409 /* Pods-MapDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +628,7 @@
 		};
 		C1C9877A24B5C66D00216513 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEC501CF70CFB08819B76726 /* Pods-MapDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +647,7 @@
 		};
 		C1C9877C24B5C66D00216513 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2D8DF6C45D3F7E8046EFA04 /* Pods-MapDemoAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +670,7 @@
 		};
 		C1C9877D24B5C66D00216513 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B02D9C56859B29EB2AC1019B /* Pods-MapDemoAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
