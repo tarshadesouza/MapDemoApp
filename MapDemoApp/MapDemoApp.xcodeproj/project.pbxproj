@@ -30,6 +30,7 @@
 		C1C9876624B5C66D00216513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876524B5C66D00216513 /* Assets.xcassets */; };
 		C1C9876924B5C66D00216513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876724B5C66D00216513 /* LaunchScreen.storyboard */; };
 		C1C9877424B5C66D00216513 /* MapDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */; };
+		C1EC759724B6F222000F33C4 /* Alamofire+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC759624B6F222000F33C4 /* Alamofire+Extensions.swift */; };
 		D340F79F3CA77C09AB3E426B /* Pods_MapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CAFAA929AF3A067AE38CE2 /* Pods_MapDemoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		C1C9876F24B5C66D00216513 /* MapDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoAppTests.swift; sourceTree = "<group>"; };
 		C1C9877524B5C66D00216513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1EC759624B6F222000F33C4 /* Alamofire+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extensions.swift"; sourceTree = "<group>"; };
 		F3A688D5074B4C0D1E386C04 /* Pods_MapDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapDemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -217,6 +219,7 @@
 		C1C9875B24B5C66A00216513 /* MapDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				C1EC759524B6F20D000F33C4 /* Extensions */,
 				C177F1DB24B62A7400FBCACC /* Repositories */,
 				C1C9875C24B5C66A00216513 /* AppDelegate.swift */,
 				C1C9875E24B5C66A00216513 /* SceneDelegate.swift */,
@@ -237,6 +240,14 @@
 				C1C9877524B5C66D00216513 /* Info.plist */,
 			);
 			path = MapDemoAppTests;
+			sourceTree = "<group>";
+		};
+		C1EC759524B6F20D000F33C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C1EC759624B6F222000F33C4 /* Alamofire+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F460CD31828EC921D0E7935E /* Frameworks */ = {
@@ -436,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EC759724B6F222000F33C4 /* Alamofire+Extensions.swift in Sources */,
 				C177F1DA24B6263C00FBCACC /* Meepable.swift in Sources */,
 				C177F1D824B6249500FBCACC /* Vehicle.swift in Sources */,
 				C177F1E724B62D6000FBCACC /* Bike.swift in Sources */,

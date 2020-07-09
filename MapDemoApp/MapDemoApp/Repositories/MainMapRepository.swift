@@ -9,23 +9,25 @@
 import Foundation
 import Alamofire
 
-typealias MeepResult = Swift.Result<Meep, AFError>
+typealias MeepResult = Swift.Result<[Meep], AFError>
 
-protocol MainMapRepositoryRepositoryProtocol {
+protocol MainMapRepositoryProtocol {
 	func retrieveData(completion: @escaping (MeepResult) -> Void)
 }
 
 /// Manages connection to the backend for MainMap call to Meep backend
-class MainMapRepository: BaseRepository, MainMapRepositoryRepositoryProtocol {
+class MainMapRepository: BaseRepository, MainMapRepositoryProtocol {
 	
 	init() {
 		super.init(manager: RequestManager())
 	}
 	
 	func retrieveData(completion: @escaping (MeepResult) -> Void) {
+
 		let queryObj = MeepEndPoints.retrieveData
-		manager.request(queryObj)?.logResponse().responseDecodable { (response: DataResponse<Meep, AFError>) in
+		manager.request(queryObj)?.logResponse().responseDecodable { (response: DataResponse<[Meep], AFError>) in
 			completion(response.result)
 		}
 	}
 }
+

@@ -32,14 +32,15 @@ extension MeepEndPoints {
 	var path: String? {
 		switch self {
 		case .retrieveData:
-			return "tripplan/api/v1/routers/lisboa/resources?lowerLeftLatLon=38.711046,-9.160096&upperRightLatLon=38.739429,-9.137115"
+			return "tripplan/api/v1/routers/lisboa/resources"
 		}
 	}
 	
 	var params: [String: Any]? {
 		switch self {
 		case .retrieveData:
-			return nil
+			return ["lowerLeftLatLon" : "38.711046,-9.160096",
+					"upperRightLatLon" : "38.739429,-9.137115"]
 		}
 	}
 	

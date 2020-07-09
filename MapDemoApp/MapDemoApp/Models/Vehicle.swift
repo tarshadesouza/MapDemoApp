@@ -15,22 +15,22 @@ enum ResourceType: String, Codable {
 }
 
 protocol Transportable: Meepable {
-	var licencePlate: String { get set }
-	var range: Double { get set }
-	var batteryLevel: Double { get set }
-	var seats: Double { get set }
-	var model: String { get set }
-	var resourceType: ResourceType { get set }
+	var licencePlate: String? { get set }
+	var range: Double? { get set }
+	var batteryLevel: Double? { get set }
+	var seats: Double? { get set }
+	var model: String? { get set }
+	var resourceType: ResourceType? { get set }
 }
 
 struct Vehicle: Codable, Transportable {
 	
-	var licencePlate: String
-	var range: Double
-	var batteryLevel: Double
-	var seats: Double
-	var model: String
-	var resourceType: ResourceType
+	var licencePlate: String?
+	var range: Double?
+	var batteryLevel: Double?
+	var seats: Double?
+	var model: String?
+	var resourceType: ResourceType?
 	var id: String
 	var name: String
 	var x: CLLocationDegrees

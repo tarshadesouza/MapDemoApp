@@ -33,7 +33,7 @@ class MainMapViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        doSomething()
+		interactor?.getMapData()
 		configMap()
     }
 
@@ -76,10 +76,6 @@ extension MainMapViewController {
 //Interaction
 extension MainMapViewController {
 
-    func doSomething() {
-        let request = MainMap.Model.Request()
-        interactor?.getMapData(request: request)
-  }
 }
 
 //Presentation
