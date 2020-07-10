@@ -9,27 +9,43 @@
 import Foundation
 
 class MeepViewObject {
-//	var vehicles: [Vehicle]
-//	var bikes: [Bike]
-//	var stops: [BusStop]
-	var obj: [Meep]
-
+	
+	var meepObjects: [Meep]
+	
 	init (data: [Meep]) {
-		self.obj = data
-//		self.vehicles = vehicles
-//		self.bikes = bikes
-//		self.stops = stops
+		self.meepObjects = data
 	}
 	
 	var vehicles: [Vehicle] {
 		var vehiclesArray = [Vehicle]()
-		obj.forEach { (meepObject) in
-			
+		meepObjects.forEach { (meepObject) in
 			guard let authorizedVehicles = meepObject.vehicle else {
 				return
 			}
 			vehiclesArray.append(authorizedVehicles)
 		}
 		return vehiclesArray
+	}
+	
+	var bikes: [Bike] {
+		var bikesArray = [Bike]()
+		meepObjects.forEach { (meepObject) in
+			guard let bike = meepObject.bike else {
+				return
+			}
+			bikesArray.append(bike)
+		}
+		return bikesArray
+	}
+	
+	var stops: [BusStop] {
+		var busArray = [BusStop]()
+		meepObjects.forEach { (meepObject) in
+			guard let stop = meepObject.stops else {
+				return
+			}
+			busArray.append(stop)
+		}
+		return busArray
 	}
 }

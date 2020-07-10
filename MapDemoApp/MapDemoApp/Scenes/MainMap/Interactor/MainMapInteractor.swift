@@ -15,39 +15,34 @@ protocol MainMapInteractorProtocol: MainMapBusinessLogicProtocol, MainMapDataSto
 }
 
 protocol MainMapBusinessLogicProtocol {
-  func getMapData()
+	func getMapData()
 }
 
 protocol MainMapDataStoreProtocol {
-  //var name: String { get set }
+	//var name: String { get set }
 }
 
 class MainMapInteractor: MainMapInteractorProtocol {
-    var presenter: MainMapPresenterProtocol
+	var presenter: MainMapPresenterProtocol
 	var repository: MainMapRepositoryProtocol?
-  
-    init(presenter: MainMapPresenterProtocol, repository: MainMapRepositoryProtocol = MainMapRepository()) {
-        self.presenter = presenter
+	
+	init(presenter: MainMapPresenterProtocol, repository: MainMapRepositoryProtocol = MainMapRepository()) {
+		self.presenter = presenter
 		self.repository = repository
-    }
-
-    func getMapData() {
-        let response = MainMap.Model.Response()
-        presenter.getMapData(response: response)
+	}
+	
+	func getMapData() {
 		
 		repository?.retrieveData(completion: { (meepResult) in
 			switch meepResult {
 			case .success(let meepObject):
-				let responseObject = meepObject
-				let test = MeepViewObject(data: responseObject)
-
-				for x in test.vehicles {
-					print(x.resourceType, x.id)
-				}
+				let meeps = MeepViewObject(data: meepObject)
+				let response = MainMap.Model.Response(meeps: meeps)
+				self.presenter.getMapData(response: response)
 			case .failure(let error):
 				print(error)
 			}
 		})
 		
-    }
+	}
 }

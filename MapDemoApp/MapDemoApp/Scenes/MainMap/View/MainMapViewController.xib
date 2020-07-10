@@ -1,24 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMapViewController" customModule="MapDemoApp" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="zoI-Sl-v4j" id="fGH-77-e16"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uzy-vk-Ooe"/>
+                <outlet property="zoomInButton" destination="BnZ-Km-1uh" id="xY3-6F-Ebn"/>
+                <outlet property="zoomOutButton" destination="bcS-Vk-eB2" id="Si0-Ms-WwI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoI-Sl-v4j" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnZ-Km-1uh">
+                    <rect key="frame" x="350" y="80" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="aYe-xz-XEI"/>
+                        <constraint firstAttribute="width" constant="48" id="w3q-6N-5eO"/>
+                    </constraints>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" image="plus.magnifyingglass" catalog="system"/>
+                    <connections>
+                        <action selector="zoomInPressed:" destination="-1" eventType="touchUpInside" id="2yE-wR-SWc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcS-Vk-eB2">
+                    <rect key="frame" x="350" y="128" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="U5H-qg-a2a"/>
+                        <constraint firstAttribute="width" constant="48" id="tvC-I0-IvN"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="minus.magnifyingglass" catalog="system"/>
+                    <connections>
+                        <action selector="zoomOutPressed:" destination="-1" eventType="touchUpInside" id="6fy-0j-b8v"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="zoI-Sl-v4j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3TT-uz-X0c"/>
+                <constraint firstItem="BnZ-Km-1uh" firstAttribute="top" secondItem="zoI-Sl-v4j" secondAttribute="top" constant="80" id="NB6-lA-Zyl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bcS-Vk-eB2" secondAttribute="trailing" constant="16" id="RBz-6b-i9q"/>
+                <constraint firstAttribute="bottom" secondItem="zoI-Sl-v4j" secondAttribute="bottom" id="T5d-ac-iY5"/>
+                <constraint firstItem="zoI-Sl-v4j" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="VF0-Pc-GpA"/>
+                <constraint firstItem="zoI-Sl-v4j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wnd-RL-WfJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BnZ-Km-1uh" secondAttribute="trailing" constant="16" id="f1z-bc-dZ2"/>
+                <constraint firstItem="bcS-Vk-eB2" firstAttribute="top" secondItem="BnZ-Km-1uh" secondAttribute="bottom" id="kGi-YS-mEp"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="139" y="145"/>
+            <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="minus.magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="plus.magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

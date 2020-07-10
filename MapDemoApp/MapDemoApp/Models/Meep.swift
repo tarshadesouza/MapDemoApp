@@ -35,7 +35,7 @@ struct Meep: Codable, Transportable, Meepable, Stoppable, Bikeable {
 	var vehicle: Vehicle? {
 		guard let plate = licencePlate, let range = range, let battery = batteryLevel, let model = model, let resType = resourceType else {
 			return nil
-			}
+		}
 		return Vehicle(licencePlate: plate, range: range, batteryLevel: battery, seats: seats, model: model, resourceType: resType, id: id, name: name, x: x, y: y, companyZoneId: companyZoneId)
 	}
 	
@@ -45,5 +45,12 @@ struct Meep: Codable, Transportable, Meepable, Stoppable, Bikeable {
 		}
 		
 		return Bike(id: id, name: name, x: x, y: y, companyZoneId: companyZoneId, realTimeData: realTimeData, station: station, availableResources: availableRes, spacesAvailable: spacesAvailable, allowDropoff: allowDropOff, bikesAvailable: bikesAvail)
+	}
+	
+	var stops: BusStop? {
+		guard let scheduleArrive = scheduledArrival, let locationType = locationType, let lat = lat, let lon = lon else {
+			return nil
+		}
+		return BusStop(id: id, name: name, x: x, y: y, companyZoneId: companyZoneId, scheduledArrival: scheduleArrive, locationType: locationType, lat: lat, lon: lon)
 	}
 }

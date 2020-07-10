@@ -13,74 +13,142 @@ import UIKit
 import GoogleMaps
 
 protocol MainMapViewProtocol: class {
-    func displayMapData(viewModel: MainMap.Model.ViewModel)
+	func displayMapData(viewModel: MainMap.Model.ViewModel)
 }
 
 class MainMapViewController: UIViewController {
-
-    var router: MainMapRouterProtocol?
-    private var interactor: MainMapInteractorProtocol?
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        initScene()
-    }
-  
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initScene()
-    }
-    
-    override func viewDidLoad(){
-        super.viewDidLoad()
+	
+	var router: MainMapRouterProtocol?
+	private var interactor: MainMapInteractorProtocol?
+	
+	@IBOutlet weak var mapView: GMSMapView! {
+		didSet {
+			mapView.camera = initialCameraPosition
+		}
+	}
+	
+	@IBOutlet weak var zoomInButton: UIButton!
+	@IBOutlet weak var zoomOutButton: UIButton!
+	
+	var zoomLevel: Float = 10.0
+	private let initialCameraPosition = GMSCameraPosition.camera(withLatitude: 38.711046, longitude: -9.160096, zoom: 10.0)
+	
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+		initScene()
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		initScene()
+	}
+	
+	override func viewDidLoad(){
+		super.viewDidLoad()
 		interactor?.getMapData()
 		configMap()
-    }
-
-    private func initScene() {
-        let presenter = MainMapPresenter(view: self)
-        interactor = MainMapInteractor(presenter: presenter)
-        router = MainMapRouter(view: self, dataStore: interactor)
-    }
+	}
+	
+	private func initScene() {
+		let presenter = MainMapPresenter(view: self)
+		interactor = MainMapInteractor(presenter: presenter)
+		router = MainMapRouter(view: self, dataStore: interactor)
+	}
 	
 	private func configMap() {
-		let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-        self.view.addSubview(mapView)
-
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+		// Creates a marker in the center of the map.
+		let marker = GMSMarker()
+		marker.position = CLLocationCoordinate2D(latitude:  38.711046, longitude: -9.160096)
+		marker.title = "Lisboa"
+		marker.snippet = "Portugal"
+		marker.map = mapView
 	}
+	
+	private func plotMarkers(with data: MeepViewObject) {
+		// Creates a marker in the center of the map.
+		
+		data.bikes.forEach { bike in
+			let marker = GMSMarker()
+			marker.position = CLLocationCoordinate2D(latitude: bike.y, longitude: bike.x)
+			marker.title = bike.name
+			marker.map = mapView
+			marker.snippet = "\(bike.bikesAvailable ?? 0) available bikes"
+		}
+		
+		data.vehicles.forEach { vehicle in
+			let marker = GMSMarker()
+			marker.position = CLLocationCoordinate2D(latitude: vehicle.y, longitude: vehicle.x)
+			marker.title = vehicle.model
+			marker.map = mapView
+			marker.snippet = "\(vehicle.resourceType)"
+			
+			switch vehicle.resourceType {
+			case .moped:
+
+				let image = UIImage(named: "icn_moped")?.imageWithColor(color: UIColor.systemPink)
+
+
+				marker.icon = image
+			case .electricCar:
+				marker.icon = UIImage(named: "icn_car")
+			case .none:
+				return
+			}
+		}
+		
+		
+	}
+	
+	@IBAction func zoomInPressed(_ sender: UIButton) {
+		zoomLevel += 1
+		mapView.animate(toZoom: zoomLevel)
+	}
+	
+	@IBAction func zoomOutPressed(_ sender: UIButton) {
+		zoomLevel -= 1
+		mapView.animate(toZoom: zoomLevel)
+	}
+	
 }
 
 //Routing
 extension MainMapViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = Selector(("routeTo\(scene):"))
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
-    private func routeToSomewhere() {
-        router?.routeToSomewhere(nil)
-    }
+	private func routeToSomewhere() {
+		router?.routeToSomewhere(nil)
+	}
 }
 
 //Interaction
 extension MainMapViewController {
-
+	
 }
 
 //Presentation
 extension MainMapViewController: MainMapViewProtocol {
-    func displayMapData(viewModel: MainMap.Model.ViewModel) {
-        //nameTextField.text = viewModel.name
+	func displayMapData(viewModel: MainMap.Model.ViewModel) {
+		let markers = viewModel.meeps
+		plotMarkers(with: markers)
+		//nameTextField.text = viewModel.name
+	}
+}
+
+extension UIImage {
+    func imageWithColor(color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        color.setFill()
+
+        let context = UIGraphicsGetCurrentContext()
+        context?.translateBy(x: 0, y: self.size.height)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        context?.setBlendMode(CGBlendMode.normal)
+
+        let rect = CGRect(origin: .zero, size: CGSize(width: self.size.width, height: self.size.height))
+        context?.clip(to: rect, mask: self.cgImage!)
+        context?.fill(rect)
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
     }
 }

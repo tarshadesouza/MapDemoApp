@@ -12,19 +12,19 @@
 import UIKit
 
 protocol MainMapPresenterProtocol {
-    func getMapData(response: MainMap.Model.Response)
+	func getMapData(response: MainMap.Model.Response)
 }
 
 class MainMapPresenter: MainMapPresenterProtocol {
-    
-    weak var view: MainMapViewProtocol?
-    
-    init(view: MainMapViewProtocol) {
-        self.view = view
-    }
-  
-    func getMapData(response: MainMap.Model.Response) {
-        let viewModel = MainMap.Model.ViewModel()
-        view?.displayMapData(viewModel: viewModel)
-    }
+	
+	weak var view: MainMapViewProtocol?
+	
+	init(view: MainMapViewProtocol) {
+		self.view = view
+	}
+	
+	func getMapData(response: MainMap.Model.Response) {
+		let viewModel = MainMap.Model.ViewModel(meeps: response.meeps)
+		view?.displayMapData(viewModel: viewModel)
+	}
 }

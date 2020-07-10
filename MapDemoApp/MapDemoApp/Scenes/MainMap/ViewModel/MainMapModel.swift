@@ -20,11 +20,11 @@ enum MainMap {
         }
     
         struct Response {
-        
+			let meeps: MeepViewObject
         }
     
         struct ViewModel {
-        
+			let meeps: MeepViewObject
         }
     }
 }
