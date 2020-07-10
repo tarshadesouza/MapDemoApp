@@ -38,12 +38,11 @@ class MainMapInteractor: MainMapInteractorProtocol {
 		repository?.retrieveData(completion: { (meepResult) in
 			switch meepResult {
 			case .success(let meepObject):
-				print("success")
-				let t = meepObject
-				t.forEach { (me) in
-					let m = me
-					me.vehicle
-					print("MA VEHICLES", me.vehicle)
+				let responseObject = meepObject
+				let test = MeepViewObject(data: responseObject)
+
+				for x in test.vehicles {
+					print(x.resourceType, x.id)
 				}
 			case .failure(let error):
 				print(error)

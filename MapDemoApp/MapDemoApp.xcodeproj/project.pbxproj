@@ -31,6 +31,7 @@
 		C1C9876924B5C66D00216513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876724B5C66D00216513 /* LaunchScreen.storyboard */; };
 		C1C9877424B5C66D00216513 /* MapDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */; };
 		C1EC759724B6F222000F33C4 /* Alamofire+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC759624B6F222000F33C4 /* Alamofire+Extensions.swift */; };
+		C1EC759B24B78500000F33C4 /* MeepViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC759A24B78500000F33C4 /* MeepViewObject.swift */; };
 		D340F79F3CA77C09AB3E426B /* Pods_MapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CAFAA929AF3A067AE38CE2 /* Pods_MapDemoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoAppTests.swift; sourceTree = "<group>"; };
 		C1C9877524B5C66D00216513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1EC759624B6F222000F33C4 /* Alamofire+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extensions.swift"; sourceTree = "<group>"; };
+		C1EC759A24B78500000F33C4 /* MeepViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeepViewObject.swift; sourceTree = "<group>"; };
 		F3A688D5074B4C0D1E386C04 /* Pods_MapDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapDemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 				C177F1E424B62CA000FBCACC /* Meep.swift */,
 				C177F1E624B62D6000FBCACC /* Bike.swift */,
 				C177F1E824B62E4800FBCACC /* BustStop.swift */,
+				C1EC759A24B78500000F33C4 /* MeepViewObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				C177F1CD24B6202700FBCACC /* MainMapModel.swift in Sources */,
 				C177F1C524B6200800FBCACC /* MainMapRouter.swift in Sources */,
 				C177F1C424B6200800FBCACC /* MainMapPresenter.swift in Sources */,
+				C1EC759B24B78500000F33C4 /* MeepViewObject.swift in Sources */,
 				C1C9875D24B5C66A00216513 /* AppDelegate.swift in Sources */,
 				C177F1DF24B62AAA00FBCACC /* RequestManager.swift in Sources */,
 				C177F1E324B62BC200FBCACC /* MainMapRepository.swift in Sources */,
