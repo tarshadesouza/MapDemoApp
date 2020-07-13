@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+///Endpoints for meep repository request objects
 public enum MeepEndPoints {
 	case retrieveData
 }

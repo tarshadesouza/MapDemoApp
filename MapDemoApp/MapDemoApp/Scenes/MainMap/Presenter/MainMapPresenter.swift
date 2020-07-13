@@ -13,6 +13,7 @@ import UIKit
 
 protocol MainMapPresenterProtocol {
 	func getMapData(response: MainMap.Model.Response)
+	func didFailToGetData()
 }
 
 class MainMapPresenter: MainMapPresenterProtocol {
@@ -26,5 +27,9 @@ class MainMapPresenter: MainMapPresenterProtocol {
 	func getMapData(response: MainMap.Model.Response) {
 		let viewModel = MainMap.Model.ViewModel(meeps: response.meeps)
 		view?.displayMapData(viewModel: viewModel)
+	}
+	
+	func didFailToGetData() {
+		view?.showError()
 	}
 }

@@ -14,9 +14,10 @@ import GoogleMaps
 
 protocol MainMapViewProtocol: class {
 	func displayMapData(viewModel: MainMap.Model.ViewModel)
+	func showError()
 }
 
-class MainMapViewController: UIViewController {
+class MainMapViewController: UIViewController, AttentionView {
 	
 	var router: MainMapRouterProtocol?
 	private var interactor: MainMapInteractorProtocol?
@@ -45,7 +46,8 @@ class MainMapViewController: UIViewController {
 	
 	override func viewDidLoad(){
 		super.viewDidLoad()
-		interactor?.getMapData()
+		configNavBar()
+		getMapData()
 		configMap()
 	}
 	
@@ -56,7 +58,6 @@ class MainMapViewController: UIViewController {
 	}
 	
 	private func configMap() {
-		// Creates a marker in the center of the map.
 		let marker = GMSMarker()
 		marker.position = CLLocationCoordinate2D(latitude:  38.711046, longitude: -9.160096)
 		marker.title = "Lisboa"
@@ -64,39 +65,30 @@ class MainMapViewController: UIViewController {
 		marker.map = mapView
 	}
 	
+	private func configNavBar() {
+		self.navigationItem.title = "Meep Map"
+	}
+	
 	private func plotMarkers(with data: MeepViewObject) {
-		// Creates a marker in the center of the map.
+		/// Creates a marker for each type of object
 		
-		data.bikes.forEach { bike in
-			let marker = GMSMarker()
-			marker.position = CLLocationCoordinate2D(latitude: bike.y, longitude: bike.x)
-			marker.title = bike.name
-			marker.map = mapView
-			marker.snippet = "\(bike.bikesAvailable ?? 0) available bikes"
-		}
-		
+		///Vehicle objects
 		data.vehicles.forEach { vehicle in
-			let marker = GMSMarker()
-			marker.position = CLLocationCoordinate2D(latitude: vehicle.y, longitude: vehicle.x)
-			marker.title = vehicle.model
+			let marker = MapMarkerFactory.getMapMarker(marker: Marker(title: vehicle.name, position: CLLocationCoordinate2D(latitude: vehicle.y, longitude: vehicle.x), snippet: "\(vehicle.resourceType ?? .electricCar)", type: .vehicle, resType: vehicle.resourceType, companyZoneId: vehicle.companyZoneId))
 			marker.map = mapView
-			marker.snippet = "\(vehicle.resourceType)"
-			
-			switch vehicle.resourceType {
-			case .moped:
-
-				let image = UIImage(named: "icn_moped")?.imageWithColor(color: UIColor.systemPink)
-
-
-				marker.icon = image
-			case .electricCar:
-				marker.icon = UIImage(named: "icn_car")
-			case .none:
-				return
-			}
 		}
 		
+		///Bike objects
+		data.bikes.forEach { bike in
+			let marker = MapMarkerFactory.getMapMarker(marker: Marker(title: bike.name, position: CLLocationCoordinate2D(latitude: bike.y, longitude: bike.x), snippet: "\(bike.bikesAvailable?.cleanValue ?? "0") available bikes", type: .bike, companyZoneId: bike.companyZoneId))
+			marker.map = mapView
+		}
 		
+		///Bus stops
+		data.stops.forEach { busStop in
+			let marker = MapMarkerFactory.getMapMarker(marker: Marker(title: busStop.name, position:  CLLocationCoordinate2D(latitude: busStop.y, longitude: busStop.x), snippet: "\(busStop.scheduledArrival ?? 0)", type: .busStop, companyZoneId: busStop.companyZoneId))
+			marker.map = mapView
+		}
 	}
 	
 	@IBAction func zoomInPressed(_ sender: UIButton) {
@@ -109,46 +101,23 @@ class MainMapViewController: UIViewController {
 		mapView.animate(toZoom: zoomLevel)
 	}
 	
-}
-
-//Routing
-extension MainMapViewController {
-	private func routeToSomewhere() {
-		router?.routeToSomewhere(nil)
+	func showError() {
+		presentErrorAlert(message: "We couldnt find any meeps 😬") { (_, _) in
+			self.getMapData()
+		}
 	}
 }
 
 //Interaction
 extension MainMapViewController {
-	
+	private func getMapData() {
+		interactor?.getMapData()
+	}
 }
 
 //Presentation
 extension MainMapViewController: MainMapViewProtocol {
 	func displayMapData(viewModel: MainMap.Model.ViewModel) {
-		let markers = viewModel.meeps
-		plotMarkers(with: markers)
-		//nameTextField.text = viewModel.name
+		plotMarkers(with: viewModel.meeps)
 	}
-}
-
-extension UIImage {
-    func imageWithColor(color: UIColor) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        color.setFill()
-
-        let context = UIGraphicsGetCurrentContext()
-        context?.translateBy(x: 0, y: self.size.height)
-        context?.scaleBy(x: 1.0, y: -1.0)
-        context?.setBlendMode(CGBlendMode.normal)
-
-        let rect = CGRect(origin: .zero, size: CGSize(width: self.size.width, height: self.size.height))
-        context?.clip(to: rect, mask: self.cgImage!)
-        context?.fill(rect)
-
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage!
-    }
 }

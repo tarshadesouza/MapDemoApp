@@ -19,7 +19,6 @@ protocol MainMapBusinessLogicProtocol {
 }
 
 protocol MainMapDataStoreProtocol {
-	//var name: String { get set }
 }
 
 class MainMapInteractor: MainMapInteractorProtocol {
@@ -32,7 +31,6 @@ class MainMapInteractor: MainMapInteractorProtocol {
 	}
 	
 	func getMapData() {
-		
 		repository?.retrieveData(completion: { (meepResult) in
 			switch meepResult {
 			case .success(let meepObject):
@@ -41,8 +39,8 @@ class MainMapInteractor: MainMapInteractorProtocol {
 				self.presenter.getMapData(response: response)
 			case .failure(let error):
 				print(error)
+				self.presenter.didFailToGetData()
 			}
 		})
-		
 	}
 }

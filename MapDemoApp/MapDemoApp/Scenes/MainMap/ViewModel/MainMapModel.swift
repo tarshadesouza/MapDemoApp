@@ -12,19 +12,19 @@
 import UIKit
 
 enum MainMap {
-  
-    enum Model {
-    
-        struct Request {
-        
-        }
-    
-        struct Response {
+	
+	enum Model {
+		
+		struct Request {
+			
+		}
+		
+		struct Response {
 			let meeps: MeepViewObject
-        }
-    
-        struct ViewModel {
+		}
+		
+		struct ViewModel {
 			let meeps: MeepViewObject
-        }
-    }
+		}
+	}
 }
