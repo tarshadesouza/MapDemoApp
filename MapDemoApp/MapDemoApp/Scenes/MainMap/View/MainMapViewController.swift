@@ -31,8 +31,8 @@ class MainMapViewController: UIViewController, AttentionView {
 	@IBOutlet weak var zoomInButton: UIButton!
 	@IBOutlet weak var zoomOutButton: UIButton!
 	
-	var zoomLevel: Float = 10.0
-	private let initialCameraPosition = GMSCameraPosition.camera(withLatitude: 38.711046, longitude: -9.160096, zoom: 10.0)
+	var zoomLevel: Float = 15.0
+	private let initialCameraPosition = GMSCameraPosition.camera(withLatitude: 38.711046, longitude: -9.160096, zoom: 15.0)
 	
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

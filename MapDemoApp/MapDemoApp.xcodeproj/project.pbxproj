@@ -42,7 +42,6 @@
 		C1C9876424B5C66A00216513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876224B5C66A00216513 /* Main.storyboard */; };
 		C1C9876624B5C66D00216513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876524B5C66D00216513 /* Assets.xcassets */; };
 		C1C9876924B5C66D00216513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C9876724B5C66D00216513 /* LaunchScreen.storyboard */; };
-		C1C9877424B5C66D00216513 /* MapDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */; };
 		C1EC759724B6F222000F33C4 /* Alamofire+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC759624B6F222000F33C4 /* Alamofire+Extensions.swift */; };
 		C1EC759B24B78500000F33C4 /* MeepViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC759A24B78500000F33C4 /* MeepViewObject.swift */; };
 		D340F79F3CA77C09AB3E426B /* Pods_MapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CAFAA929AF3A067AE38CE2 /* Pods_MapDemoApp.framework */; };
@@ -101,7 +100,6 @@
 		C1C9876824B5C66D00216513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1C9876A24B5C66D00216513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1C9876F24B5C66D00216513 /* MapDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoAppTests.swift; sourceTree = "<group>"; };
 		C1C9877524B5C66D00216513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1EC759624B6F222000F33C4 /* Alamofire+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extensions.swift"; sourceTree = "<group>"; };
 		C1EC759A24B78500000F33C4 /* MeepViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeepViewObject.swift; sourceTree = "<group>"; };
@@ -346,7 +344,6 @@
 				C19BDE8B24BB97CC00DFCB3D /* MainMap */,
 				C19BDE8A24BB97AD00DFCB3D /* Stubs */,
 				C19BDE8524BB964900DFCB3D /* Repository */,
-				C1C9877324B5C66D00216513 /* MapDemoAppTests.swift */,
 				C1C9877524B5C66D00216513 /* Info.plist */,
 				C19BDE8824BB978D00DFCB3D /* XCTestExtensions.swift */,
 			);
@@ -597,7 +594,6 @@
 				C19BDE9224BB983900DFCB3D /* MainMapPresenterMock.swift in Sources */,
 				C19BDE8724BB96B500DFCB3D /* MapRepositoryMock.swift in Sources */,
 				C19BDE8924BB978D00DFCB3D /* XCTestExtensions.swift in Sources */,
-				C1C9877424B5C66D00216513 /* MapDemoAppTests.swift in Sources */,
 				C19BDE9424BB98C800DFCB3D /* MainMapInteractorMock.swift in Sources */,
 				C19BDE9824BB9A5B00DFCB3D /* CommonApiError.swift in Sources */,
 			);
